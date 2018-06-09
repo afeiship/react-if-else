@@ -18,10 +18,22 @@ class App extends React.Component{
     window.rc = this.refs.rc;
   }
 
+  _onChange = e =>{
+    const { checked } = e.target;
+    this.setState({ value: checked })
+  };
+
   render(){
     return (
       <div className="hello-react-if-else">
-        <ReactIfElse ref='rc' />
+        <label>
+          <input value={this.state.value} type="checkbox" onChange={this._onChange} />
+          <span>切换if-else</span>
+        </label>
+        <ReactIfElse value={this.state.value}>
+          <button>YES - 选中</button>
+          <button>NO - 非选中</button>
+        </ReactIfElse>
       </div>
     );
   }
