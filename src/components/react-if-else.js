@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import ReactConditionManager from 'react-condition-manager';
+import PropTypes from 'prop-types';
+
 
 const DEFAULT_CONDITION = [true, false];
 
 export default class extends Component {
   /*===properties start===*/
   static propTypes = {
+    value: PropTypes.bool
   };
 
   static defaultProps = {
@@ -13,8 +16,9 @@ export default class extends Component {
   /*===properties end===*/
 
   render() {
+    const { value, ...props } = this.props;
     return (
-      <ReactConditionManager items={DEFAULT_CONDITION} {...this.props} />
+      <ReactConditionManager items={[ value, !value ]} {...props} />
     );
   }
 }
