@@ -15,7 +15,7 @@ export default class extends Component {
   render() {
     const { value, ...props } = this.props;
     return (
-      <ReactConditionManager items={[ value, !value ]} {...props} />
+      <ReactConditionManager items={[ !!value, !value ]} {...props} />
     );
   }
 }
