@@ -92,8 +92,6 @@
     "noop": "github:afeiship/noop",
     "object-assign": "*",
     "prop-types": "*",
-    "react": "*",
-    "react-condition-manager": "github:afeiship/react-condition-manager",
-    "react-dom": "*"
+    "react-condition-manager": "github:afeiship/react-condition-manager"
   }
 }
