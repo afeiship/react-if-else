@@ -5,7 +5,6 @@
 ```javascript
 
   static propTypes = {
-    value: PropTypes.bool
   };
 
   static defaultProps = {
