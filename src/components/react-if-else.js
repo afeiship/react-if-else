@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 export default class extends Component {
   /*===properties start===*/
   static propTypes = {
-    value: PropTypes.bool
   };
 
   static defaultProps = {
