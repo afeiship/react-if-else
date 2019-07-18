@@ -16,35 +16,42 @@ npm install -S afeiship/react-if-else
   ```
 2. import js
   ```js
-  import React from 'react';
+  import ReactIfElse from '../src/main';
   import ReactDOM from 'react-dom';
-  import ReactIfElse from 'react-if-else';
-  
-  // your app:
-  class App extends React.Component{
-    render(){
+  import React from 'react';
+  import noop from 'noop';
+  import './assets/style.scss';
+
+  class App extends React.Component {
+    state = {
+      value: false
+    };
+
+    render() {
       return (
-        <ReactIfElse />
-      )
+        <div className="app-container">
+          <h1>Status: {String(this.state.value)}</h1>
+          <p>
+            <span
+              onClick={() => {
+                this.setState({ value: !this.state.value });
+              }}>
+              <input type="checkbox" onChange={noop} checked={this.state.value} />
+              <strong>改变状态</strong>
+            </span>
+          </p>
+          <ReactIfElse value={this.state.value}>
+            <span>When Truthy</span>
+            <span>When Falsly</span>
+          </ReactIfElse>
+        </div>
+      );
     }
   }
 
-  // render to dom:
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
+
   ```
 
 ## documentation
 - https://afeiship.github.io/react-if-else/
-
-## resouces
-- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-- https://www.valentinog.com/blog/react-webpack-babel/
-- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
-- https://testing-library.com/docs/react-testing-library/api
-
-## todos
-- [ ] Add: semver number for every build files.
-- [ ] Add: need output css files.
-- [ ] Add: PWA support for docs.
-- [ ] Add: source.map file for dist(`you can upload for production debug`).
-- [ ] BUG: npm run dev will clean dist.
