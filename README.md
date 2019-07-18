@@ -1,72 +1,50 @@
 # react-if-else
-> If else logic component for react
+> If else logic component for react.
 
-## properties:
-```javascript
+## install
+```shell
+npm install -S afeiship/react-if-else
+```
 
-  static propTypes = {
-  };
+## usage
+1. import css
+  ```scss
+  @import "~react-if-else/style.scss";
 
-  static defaultProps = {
-  };
+  // customize your styles:
+  $react-if-else-options: ()
+  ```
+2. import js
+  ```js
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import ReactIfElse from 'react-if-else';
   
-```
-
-## install && import:
-```bash
-npm install --save afeiship/react-if-else --registry=https://registry.npm.taobao.org
-```
-
-```js
-import ReactIfElse from 'react-if-else';
-```
-
-```scss
-// customize your styles:
-$react-if-else-options:(
-);
-
-@import 'node_modules/react-if-else/dist/style.scss';
-```
-
-
-## usage:
-```jsx
-
-// install: npm install afeiship/react-if-else --save
-// import : import ReactIfElse from 'react-if-else'
-
-class App extends React.Component{
-  state = {
-
-  };
-
-  constructor(props){
-    super(props);
-    window.demo = this;
-    window.refs = this.refs;
-    window.rc = this.refs.rc;
+  // your app:
+  class App extends React.Component{
+    render(){
+      return (
+        <ReactIfElse />
+      )
+    }
   }
 
-  _onChange = e =>{
-    const { checked } = e.target;
-    this.setState({ value: checked })
-  };
+  // render to dom:
+  ReactDOM.render(<App/>, document.getElementById('app'));
+  ```
 
-  render(){
-    return (
-      <div className="hello-react-if-else">
-        <label>
-          <input value={this.state.value} type="checkbox" onChange={this._onChange} />
-          <span>切换if-else</span>
-        </label>
-        <ReactIfElse value={this.state.value}>
-          <button>YES - 选中</button>
-          <button>NO - 非选中</button>
-        </ReactIfElse>
-      </div>
-    );
-  }
-}
+## documentation
+- https://afeiship.github.io/react-if-else/
 
-```
+## resouces
+- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
+- https://www.valentinog.com/blog/react-webpack-babel/
+- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
+- https://testing-library.com/docs/react-testing-library/api
+
+## todos
+- [ ] Add: semver number for every build files.
+- [ ] Add: need output css files.
+- [ ] Add: PWA support for docs.
+- [ ] Add: source.map file for dist(`you can upload for production debug`).
+- [ ] BUG: npm run dev will clean dist.

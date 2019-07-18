@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+#app,
+.app-container {
+  height: 100%;
+}
+
+@import "@/components/style.scss";
+
+.app-container {
+  padding: 50px;
+  user-select: none;
+  h1 {
+    border-left: 5px solid #ccc;
+    padding-left: 15px;
+  }
+  p {
+    cursor: pointer;
+    margin: 10px 0;
+  }
+}

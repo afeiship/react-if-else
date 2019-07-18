@@ -1,2 +1,2 @@
-import ReactIfElse from 'components/react-if-else';
+import ReactIfElse from './components';
 export default ReactIfElse;
