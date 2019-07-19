@@ -12,6 +12,8 @@ import {
 export default merge(baseConfig, {
   entry: inputs.build(),
   output: outputs.build(),
-  externals: externals.base(),
+  externals: externals.base({
+    'react-condition-manager': 'react-condition-manager'
+  }),
   plugins: [plugins.clean(), plugins.copyAssets(), plugins.copyStyles()]
 });

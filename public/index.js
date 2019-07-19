@@ -22,7 +22,7 @@ class App extends React.Component {
             <strong>改变状态</strong>
           </span>
         </p>
-        <ReactIfElse value={this.state.value}>
+        <ReactIfElse virtual value={this.state.value}>
           <span>When Truthy</span>
           <span>When Falsly</span>
         </ReactIfElse>
