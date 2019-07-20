@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactConditionManager from 'react-condition-manager';
+import PropTypes from 'prop-types';
 
 export default class extends Component {
   static propTypes = {
