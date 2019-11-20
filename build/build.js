@@ -7,13 +7,15 @@ import {
   loaders,
   plugins,
   externals
-} from 'webpack-lib-kits';
+} from '@feizheng/webpack-lib-kits';
 
 export default merge(baseConfig, {
   entry: inputs.build(),
-  output: outputs.build(),
-  externals: externals.base({
-    'react-condition-manager': 'react-condition-manager'
+  output: outputs.build({
+    library: 'ReactIfElse'
   }),
-  plugins: [plugins.clean(), plugins.copyAssets(), plugins.copyStyles()]
+  externals: externals.base({
+    '@feizheng/react-condition-manager': '@feizheng/react-condition-manager'
+  }),
+  plugins: [plugins.clean(), plugins.copyStyles()]
 });

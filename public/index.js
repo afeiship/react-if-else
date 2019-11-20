@@ -1,7 +1,7 @@
 import ReactIfElse from '../src/main';
 import ReactDOM from 'react-dom';
 import React from 'react';
-import noop from 'noop';
+import noop from '@feizheng/noop';
 import './assets/style.scss';
 
 class App extends React.Component {
