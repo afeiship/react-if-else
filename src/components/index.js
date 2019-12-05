@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 export default class extends Component {
   static propTypes = {
-    unique: PropTypes.bool
+    only: PropTypes.bool
   };
   render() {
-    const { value, unique, ...props } = this.props;
-    const items = unique ? [!!value] : [!!value, !value];
+    const { value, only, ...props } = this.props;
+    const items = only ? [!!value] : [!!value, !value];
     return <ReactConditionManager items={items} {...props} />;
   }
 }

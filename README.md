@@ -6,6 +6,15 @@
 npm install -S afeiship/react-if-else
 ```
 
+## properties
+| property  | type | description |
+| --------- | ---- | ----------- |
+| className | -    | -           |
+| only      | -    | -           |
+| virtual   | -    | -           |
+| value     | -    | -           |
+
+
 ## usage
 1. import css
   ```scss
@@ -19,11 +28,12 @@ npm install -S afeiship/react-if-else
   import ReactIfElse from '../src/main';
   import ReactDOM from 'react-dom';
   import React from 'react';
-  import noop from 'noop';
+  import noop from '@feizheng/noop';
   import './assets/style.scss';
 
   class App extends React.Component {
     state = {
+      checked: false,
       value: false
     };
 
@@ -40,9 +50,22 @@ npm install -S afeiship/react-if-else
               <strong>改变状态</strong>
             </span>
           </p>
-          <ReactIfElse value={this.state.value}>
+          <p>
+            <input
+              type="checkbox"
+              value={this.state.checked}
+              onChange={() => {
+                this.setState({ checked: !this.state.checked });
+              }}
+            />
+            点前面的切换
+          </p>
+          <ReactIfElse virtual value={this.state.value}>
             <span>When Truthy</span>
             <span>When Falsly</span>
+          </ReactIfElse>
+          <ReactIfElse only value={this.state.checked}>
+            <span>When checked, i will show!</span>
           </ReactIfElse>
         </div>
       );
@@ -50,7 +73,6 @@ npm install -S afeiship/react-if-else
   }
 
   ReactDOM.render(<App />, document.getElementById('app'));
-
   ```
 
 ## documentation

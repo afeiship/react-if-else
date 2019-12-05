@@ -24,16 +24,20 @@ class App extends React.Component {
           </span>
         </p>
         <p>
-          <input type="checkbox" value={this.state.checked} onChange={()=>{
-            this.setState({ checked: !this.state.checked })
-          }}/>
+          <input
+            type="checkbox"
+            value={this.state.checked}
+            onChange={() => {
+              this.setState({ checked: !this.state.checked });
+            }}
+          />
           点前面的切换
         </p>
         <ReactIfElse virtual value={this.state.value}>
           <span>When Truthy</span>
           <span>When Falsly</span>
         </ReactIfElse>
-        <ReactIfElse unique value={this.state.checked}>
+        <ReactIfElse only value={this.state.checked}>
           <span>When checked, i will show!</span>
         </ReactIfElse>
       </div>
