@@ -77,3 +77,13 @@ npm install -S afeiship/react-if-else
 
 ## documentation
 - https://afeiship.github.io/react-if-else/
+
+
+## todo
+```js
+// will trigger error warning
+<IfElse virtual value={item.to}>
+  <Link to={item.to}>{item.label}</a>
+  <strong>{item.label}</strong>
+</IfElse>
+```
