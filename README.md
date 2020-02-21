@@ -30,7 +30,7 @@ npm update @feizheng/react-if-else
   ```
 2. import js
   ```js
-  import ReactIfElse from '../src/main';
+  import ReactIfElse from '@feizheng/react-if-else';
   import ReactDOM from 'react-dom';
   import React from 'react';
   import noop from '@feizheng/noop';
