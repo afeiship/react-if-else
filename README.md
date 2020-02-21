@@ -1,9 +1,14 @@
 # react-if-else
 > If else logic component for react.
 
-## install
+## installation
 ```shell
-npm install -S afeiship/react-if-else
+npm install -S @feizheng/react-if-else
+```
+
+## update
+```shell
+npm update @feizheng/react-if-else
 ```
 
 ## properties
