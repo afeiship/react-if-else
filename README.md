@@ -14,7 +14,7 @@ npm install -S @jswork/react-if-else
 ## properties
 | Name | Type | Required | Default | Description       |
 | ---- | ---- | -------- | ------- | ----------------- |
-| only | bool | false    | -       | If is only child. |
+| only | bool | false    | false   | If is only child. |
 
 
 ## usage
