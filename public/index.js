@@ -1,7 +1,8 @@
-import ReactIfElse from '../src/main';
-import ReactDOM from 'react-dom';
+import ReactDemokit from '@jswork/react-demokit';
 import React from 'react';
-import noop from '@feizheng/noop';
+import ReactDOM from 'react-dom';
+import noop from '@jswork/noop';
+import ReactIfElse from '../src/main';
 import './assets/style.scss';
 
 class App extends React.Component {
@@ -9,10 +10,11 @@ class App extends React.Component {
     checked: false,
     value: false
   };
-
   render() {
     return (
-      <div className="app-container">
+      <ReactDemokit
+        className="p-3 app-container"
+        url="https://github.com/afeiship/react-if-else">
         <h1>Status: {String(this.state.value)}</h1>
         <p>
           <span
@@ -24,14 +26,16 @@ class App extends React.Component {
           </span>
         </p>
         <p>
-          <input
-            type="checkbox"
-            value={this.state.checked}
-            onChange={() => {
-              this.setState({ checked: !this.state.checked });
-            }}
-          />
-          点前面的切换
+          <label>
+            <input
+              type="checkbox"
+              value={this.state.checked}
+              onChange={() => {
+                this.setState({ checked: !this.state.checked });
+              }}
+            />
+            点前面的切换
+          </label>
         </p>
         <ReactIfElse virtual value={this.state.value}>
           <span>When Truthy</span>
@@ -40,7 +44,7 @@ class App extends React.Component {
         <ReactIfElse only value={this.state.checked}>
           <span>When checked, i will show!</span>
         </ReactIfElse>
-      </div>
+      </ReactDemokit>
     );
   }
 }

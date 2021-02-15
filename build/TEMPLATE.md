@@ -12,12 +12,7 @@ npm install -S @jswork/react-if-else
 ```
 
 ## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| value     | object | false    | null    | The changed value.                    |
-| onChange  | func   | false    | noop    | The change handler.                   |
-
+__GENERATE_DOCS__
 
 ## usage
 1. import css
@@ -32,32 +27,20 @@ npm install -S @jswork/react-if-else
   ```
 2. import js
   ```js
-  import ReactDemokit from '@jswork/react-demokit';
-  import React from 'react';
-  import ReactDOM from 'react-dom';
-  import ReactIfElse from '@jswork/react-if-else';
-  import './assets/style.scss';
-
-  class App extends React.Component {
-    render() {
-      return (
-        <ReactDemokit
-          className="p-3 app-container"
-          url="https://github.com/afeiship/react-if-else">
-          <ReactIfElse className="mb-5 has-text-white" />
-          <button className="button is-primary is-fullwidth">Start~</button>
-        </ReactDemokit>
-      );
-    }
-  }
-
-  ReactDOM.render(<App />, document.getElementById('app'));
-
+__GENERATE_DAPP__
   ```
 
 ## documentation
 - https://afeiship.github.io/react-if-else/
 
+## todo
+```jsx
+// will trigger error warning
+<IfElse virtual value={item.to}>
+  <Link to={item.to}>{item.label}</a>
+  <strong>{item.label}</strong>
+</IfElse>
+```
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-if-else/blob/master/LICENSE.txt).

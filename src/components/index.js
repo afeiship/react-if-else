@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactConditionManager from '@feizheng/react-condition-manager';
+import ReactConditionManager from '@jswork/react-condition-manager';
 import PropTypes from 'prop-types';
 
 export default class extends Component {
