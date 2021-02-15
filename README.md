@@ -12,11 +12,9 @@ npm install -S @jswork/react-if-else
 ```
 
 ## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| value     | object | false    | null    | The changed value.                    |
-| onChange  | func   | false    | noop    | The change handler.                   |
+| Name | Type | Required | Default | Description       |
+| ---- | ---- | -------- | ------- | ----------------- |
+| only | bool | false    | -       | If is only child. |
 
 
 ## usage
@@ -35,17 +33,49 @@ npm install -S @jswork/react-if-else
   import ReactDemokit from '@jswork/react-demokit';
   import React from 'react';
   import ReactDOM from 'react-dom';
+  import noop from '@jswork/noop';
   import ReactIfElse from '@jswork/react-if-else';
   import './assets/style.scss';
 
   class App extends React.Component {
+    state = {
+      checked: false,
+      value: false
+    };
     render() {
       return (
         <ReactDemokit
           className="p-3 app-container"
           url="https://github.com/afeiship/react-if-else">
-          <ReactIfElse className="mb-5 has-text-white" />
-          <button className="button is-primary is-fullwidth">Start~</button>
+          <h1>Status: {String(this.state.value)}</h1>
+          <p>
+            <span
+              onClick={() => {
+                this.setState({ value: !this.state.value });
+              }}>
+              <input type="checkbox" onChange={noop} checked={this.state.value} />
+              <strong>改变状态</strong>
+            </span>
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                value={this.state.checked}
+                onChange={() => {
+                  this.setState({ checked: !this.state.checked });
+                }}
+              />
+              点前面的切换
+            </label>
+          </p>
+          <ReactIfElse virtual value={this.state.value}>
+            <span>When Truthy</span>
+            <span>When Falsly</span>
+          </ReactIfElse>
+          <ReactIfElse only value={this.state.checked}>
+            <span>When checked, i will show!</span>
+          </ReactIfElse>
         </ReactDemokit>
       );
     }
@@ -58,6 +88,14 @@ npm install -S @jswork/react-if-else
 ## documentation
 - https://afeiship.github.io/react-if-else/
 
+## todo
+```jsx
+// will trigger error warning
+<IfElse virtual value={item.to}>
+  <Link to={item.to}>{item.label}</a>
+  <strong>{item.label}</strong>
+</IfElse>
+```
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-if-else/blob/master/LICENSE.txt).

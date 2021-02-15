@@ -20,17 +20,11 @@
     "url": "git+https://github.com/afeiship/react-if-else.git"
   },
   "keywords": [
-    "boilerplate",
     "react",
-    "component",
-    "cra",
-    "template",
-    "webpack",
-    "sass",
-    "scss",
-    "docs",
-    "service-worker",
-    "sw"
+    "if",
+    "else",
+    "condition",
+    "logic"
   ],
   "author": "afei",
   "license": "MIT",
