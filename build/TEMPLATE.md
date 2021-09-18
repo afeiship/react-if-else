@@ -15,17 +15,6 @@ npm install -S @jswork/react-if-else
 __GENERATE_DOCS__
 
 ## usage
-1. import css
-  ```scss
-  @import "~@jswork/react-if-else/dist/style.css";
-
-  // or use sass
-  @import "~@jswork/react-if-else/dist/style.scss";
-
-  // customize your styles:
-  $react-if-else-options: ()
-  ```
-2. import js
   ```js
 __GENERATE_DAPP__
   ```

@@ -1,6 +1,6 @@
 {
   "name": "@jswork/react-if-else",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "If else logic component for react.",
   "main": "dist/index.js",
   "scripts": {
@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@jswork/noop": "^1.0.0",
-    "@jswork/react-condition-manager": "^1.0.0",
+    "@jswork/react-condition-manager": "^1.1.0",
     "classnames": "^2.2.6"
   },
   "publishConfig": {
