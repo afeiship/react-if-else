@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactConditionManager from '@jswork/react-condition-manager';
 
-export interface ReactIfElseProps {
+export interface ReactIfElseProps extends React.PropsWithChildren {
   value: boolean;
   only?: boolean;
 }
