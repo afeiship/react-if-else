@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import ReactConditionManager from '@jswork/react-condition-manager';
+import ReactConditionManager, { ReactConditionManagerProps } from '@jswork/react-condition-manager';
 
-export interface ReactIfElseProps extends React.PropsWithChildren {
+export interface ReactIfElseProps extends Omit<ReactConditionManagerProps, 'items'> {
   value: boolean;
-  only?: boolean;
 }
 
 export default class ReactIfElse extends Component<ReactIfElseProps, any> {
   static displayName = 'ReactIfElse';
-
-  static defaultProps = {
-    only: false,
-  };
 
   render() {
     const { value, only, ...props } = this.props;
