@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactConditionManager, { ReactConditionManagerProps } from '@jswork/react-condition-manager';
 
 export interface ReactIfElseProps extends Omit<ReactConditionManagerProps, 'items'> {
-  value: boolean;
+  value: any;
 }
 
 export default class ReactIfElse extends Component<ReactIfElseProps, any> {
