@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import ReactConditionManager, { ReactConditionManagerProps } from '@jswork/react-condition-manager';
 
 export interface ReactIfElseProps extends Omit<ReactConditionManagerProps, 'items'> {
