@@ -1,7 +1,7 @@
 {
   "name": "@jswork/react-if-else",
   "description": "If else logic component for react.",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -34,7 +34,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@jswork/react-condition-manager": "^1.2.1"
+    "@jswork/react-condition-manager": "^1.2.3"
   },
   "keywords": [
     "react",
