@@ -5,18 +5,13 @@ export interface ReactIfElseProps extends Omit<ReactConditionManagerProps, 'item
   value: any;
 }
 
-export default class ReactIfElse extends React.Component<ReactIfElseProps, any> {
-  static displayName = 'ReactIfElse';
+const ReactIfElse: React.FC<ReactIfElseProps> = ({ value, children, ...props }) => {
+  const isOnly = React.Children.count(children) === 1;
+  const items = isOnly ? [!!value] : [!!value, !value];
 
-  get isOnly() {
-    const { children } = this.props;
-    return React.Children.count(children) === 1;
-  }
+  return <ReactConditionManager items={items} {...props}>{children}</ReactConditionManager>;
+};
 
-  render() {
-    // todo: only will remove later
-    const { value, only, ...props } = this.props;
-    const items = this.isOnly ? [!!value] : [!!value, !value];
-    return <ReactConditionManager items={items} {...props} />;
-  }
-}
+ReactIfElse.displayName = 'ReactIfElse';
+
+export default ReactIfElse;
